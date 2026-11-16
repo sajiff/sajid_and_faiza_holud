@@ -182,7 +182,7 @@ main{position:relative;z-index:2;max-width:480px;margin:0 auto;padding:0 16px 12
 .h-dis{font-family:var(--f-display);font-size:34px;color:var(--plum);line-height:1.1;margin-top:46px}
 
 /* handwritten map link */
-.strand{display:block;width:calc(100% + 16px);margin:4px 0 0 -16px;overflow:visible}
+.strand{display:block;width:min(100vw,620px);margin:4px 0 0 calc(50% - min(50vw,310px));overflow:visible}
 .strand .b{animation:twinkle 2.4s ease-in-out infinite}
 .strand .b:nth-child(2n){animation-delay:-1.2s}.strand .b:nth-child(3n){animation-delay:-.6s}
 .mapnote{position:relative;display:flex;align-items:center;gap:6px;margin:34px 0 0 2%;width:max-content;max-width:72%;text-decoration:none}
@@ -321,10 +321,8 @@ textarea{min-height:84px;resize:vertical}
 <!-- Cover -->
 <div class="cover" id="cover" role="button" tabindex="-1" aria-label="আমন্ত্রণপত্র খুলুন">
   <div class="kite k1" aria-hidden="true"><div class="fly">
-    <svg class="str" viewBox="0 0 300 700" preserveAspectRatio="none"><path d="M300 0 Q250 380 0 700" fill="none" stroke="#7A4A1A" stroke-width="1.2" vector-effect="non-scaling-stroke" opacity=".7"/></svg>
     <img data-a="kite1" alt=""></div></div>
   <div class="kite k2" aria-hidden="true"><div class="fly">
-    <svg class="str" viewBox="0 0 300 700" preserveAspectRatio="none"><path d="M0 0 Q50 380 300 700" fill="none" stroke="#7A4A1A" stroke-width="1.2" vector-effect="non-scaling-stroke" opacity=".7"/></svg>
     <img data-a="kite2" alt=""></div></div>
   <div class="badge" aria-hidden="true">
     <svg class="dome" viewBox="0 0 300 330">
@@ -419,15 +417,15 @@ textarea{min-height:84px;resize:vertical}
     <div class="dl">
       <div><div class="k">তারিখ</div><div class="v">৩১ ডিসেম্বর ২০২৬<br>বৃহস্পতিবার</div></div>
       <div><div class="k">সময়</div><div class="v">সন্ধ্যা ৬টা থেকে</div></div>
-      <div><div class="k">ভেন্যু</div><div class="v">গ্রীন গার্ডেন, ড্যাফোডিল প্লাজা<br>৪/২, সোবহানবাগ, মিরপুর রোড<br>ঢাকা ১২০৭</div></div>
+      <div><div class="k">ভেন্যু</div><div class="v">গ্রীন গার্ডেন, ড্যাফোডিল প্লাজা,<br>রুফটপ<br>৪/২, সোবহানবাগ, মিরপুর রোড<br>ঢাকা ১২০৭</div></div>
     </div>
   </section>
 
   <svg class="strand" id="strand" viewBox="0 0 400 112" aria-hidden="true">
     <defs><radialGradient id="bulb"><stop offset="0" stop-color="#FFFBE0"/><stop offset=".5" stop-color="#FFE27A"/><stop offset="1" stop-color="#F6B21E"/></radialGradient>
       <radialGradient id="glow"><stop offset="0" stop-color="#FFE9A0" stop-opacity=".9"/><stop offset="1" stop-color="#FFE9A0" stop-opacity="0"/></radialGradient></defs>
-    <path id="wire" class="wire" d="M-6 6 Q60 52 128 18 Q196 56 262 20 Q322 50 374 8" fill="none" stroke="#8A5A1E" stroke-width="1.6" stroke-linecap="round"/>
-    <path id="wire2" class="wire" d="M-6 30 Q36 78 92 50 Q160 92 226 54 Q292 90 340 50 Q362 70 380 44" fill="none" stroke="#8A5A1E" stroke-width="1.6" stroke-linecap="round"/>
+    <path id="wire" class="wire" d="M-6 6 Q60 52 128 18 Q196 56 262 20 Q334 54 406 10" fill="none" stroke="#8A5A1E" stroke-width="1.6" stroke-linecap="round"/>
+    <path id="wire2" class="wire" d="M-6 30 Q36 78 92 50 Q160 92 226 54 Q292 90 340 50 Q376 76 406 40" fill="none" stroke="#8A5A1E" stroke-width="1.6" stroke-linecap="round"/>
     <g id="bulbs"></g><g id="bulbs2"></g>
   </svg>
   <a class="mapnote rv left" href="https://www.google.com/maps/search/?api=1&amp;query=Daffodil+Plaza%2C+4%2F2+Sobhanbag%2C+Mirpur+Road%2C+Dhaka+1207" target="_blank" rel="noopener">
@@ -718,7 +716,7 @@ var A = {"couple":{"uri":"data:image/webp;base64,UklGRhaGAQBXRUJQVlA4WAoAAAAQAAA
   // ---- bulbs along the string of lights ----
   (function(){
     var NS = "http://www.w3.org/2000/svg";
-    [["wire","bulbs",15],["wire2","bulbs2",17]].forEach(function(c){
+    [["wire","bulbs",17],["wire2","bulbs2",19]].forEach(function(c){
     var wire = document.getElementById(c[0]), g = document.getElementById(c[1]);
     var L = wire.getTotalLength(), n = c[2];
     for (var i = 1; i < n; i++){
